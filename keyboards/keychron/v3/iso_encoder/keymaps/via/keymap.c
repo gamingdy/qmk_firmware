@@ -62,6 +62,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______),
 };
 
+
+
+int MAX_DELAY = 500;
+
+typedef struct{
+    uint16_t keycode;
+    bool pressed;
+    int index;
+    uint16_t timer;
+}key_index;
+
+key_index tablo[RGB_MATRIX_LED_COUNT] = {
+    {KC_Q, false, 34, 0}
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    
+    for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
+        if (tablo[i].keycode == keycode) {
+            if (record->event.pressed){
+                tablo[i].pressed = true;
+                tablo[i].timer = timer_read();
+            }
+        }
+    }
+    return true;
+}
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+
+    for (uint8_t i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
+        if (tablo[i].pressed) {
+            rgb_matrix_set_color(tablo[i].index, 255, 255, 255);
+            if (timer_elapsed(tablo[i].timer) > MAX_DELAY) {
+                tablo[i].pressed = false;
+            }
+        }
+    }
+
+
+    if (host_keyboard_led_state().caps_lock) {
+        RGB_MATRIX_INDICATOR_SET_COLOR(49, 255, 255, 255); // assuming caps lock is at led #5
+    }
+    return false;
+}
+
+
+
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [MAC_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
