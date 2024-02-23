@@ -77,7 +77,7 @@ key_index key_array[RGB_MATRIX_LED_COUNT] = {
     {KC_1, false, 17, 0},{KC_2, false, 18, 0},{KC_3, false, 19, 0},{KC_4, false, 20, 0},{KC_5, false, 21, 0},{KC_6, false, 22, 0},{KC_7, false, 23, 0},{KC_8, false, 24, 0},{KC_9, false, 25, 0},{KC_0, false, 26, 0},{KC_MINS, false, 27, 0},{KC_EQL, false, 28, 0},
     {KC_Q, false, 34, 0}, {KC_W, false, 35, 0}, {KC_E, false, 36, 0}, {KC_R, false, 37, 0}, {KC_T, false, 38, 0}, {KC_Y, false, 39, 0}, {KC_U, false, 40, 0}, {KC_I, false, 41, 0}, {KC_O, false, 42, 0}, {KC_P, false, 43, 0}, {KC_LBRC, false, 44, 0}, {KC_RBRC, false, 45, 0},
     {KC_A,false,50,0}, {KC_S,false,51,0}, {KC_D,false,52,0}, {KC_F,false,53,0}, {KC_G,false,54,0}, {KC_H,false,55,0}, {KC_J,false,56,0}, {KC_K,false,57,0}, {KC_L,false,58,0}, {KC_SCLN,false,59,0}, {KC_QUOT,false,60,0}, {KC_NUHS,false,61,0},
-    {KC_Z,false,65,0}, {KC_X,false,66,0}, {KC_C,false,67,0}, {KC_V,false,68,0}, {KC_B,false,69,0}, {KC_N,false,70,0}, {KC_M,false,71,0}, {KC_COMM,false,72,0}, {KC_DOT,false,73,0}, {KC_SLSH,false,74,0}, {KC_RSFT,false,75,0},
+    {KC_Z,false,65,0}, {KC_X,false,66,0}, {KC_C,false,67,0}, {KC_V,false,68,0}, {KC_B,false,69,0}, {KC_N,false,70,0}, {KC_M,false,71,0}, {KC_COMM,false,72,0}, {KC_DOT,false,73,0}, {KC_SLSH,false,74,0},
     {KC_SPC,false,80,0}
 };
 
